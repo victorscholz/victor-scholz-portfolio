@@ -192,7 +192,7 @@ export function Categories({ time = 5500 }) {
   return (
     <p style={{ height: 70 }}>
       <a
-        // href="https://github.com/victorscholz"
+        href="https://github.com/victorscholz"
         style={{ width: 300 }}
         onClick={() => set((index + 1) % 2)}
       >
