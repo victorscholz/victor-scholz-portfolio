@@ -161,7 +161,7 @@ export function Categories({ time = 5500 }) {
   useEffect(() => {
     const interval = setInterval(() => set((index + 1) % 2), time);
     return () => clearInterval(interval);
-  }, [index]);
+  }, [index, time]);
   const cats = useMemo(
     () => [
       {
@@ -187,11 +187,15 @@ export function Categories({ time = 5500 }) {
     ref.current.style.animation = "none";
     void ref.current.offsetHeight;
     ref.current.style.animation = `changewidth ${time / 1000}s linear`;
-  }, [index]);
+  }, [index, time]);
 
   return (
     <p style={{ height: 70 }}>
-      <a href="#" style={{ width: 300 }} onClick={() => set((index + 1) % 2)}>
+      <a
+        // href="https://github.com/victorscholz"
+        style={{ width: 300 }}
+        onClick={() => set((index + 1) % 2)}
+      >
         <div
           ref={ref}
           className="progress"
