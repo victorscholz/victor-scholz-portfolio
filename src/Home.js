@@ -1,5 +1,7 @@
 import React, { useRef, useMemo, useEffect, useState } from "react";
 import { useFrame, useThree } from "react-three-fiber";
+import { useSpring } from "@react-spring/core";
+import { a } from "@react-spring/three";
 
 function useWobble(factor = 1, fn = "sin", cb) {
   const ref = useRef();
@@ -12,7 +14,12 @@ function useWobble(factor = 1, fn = "sin", cb) {
 }
 
 export function Box(props) {
-  const [hovered, setHover] = useState(false);
+  const [hover, setHover] = useState(false);
+  const hovered = useSpring({ color: hover ? "lightgreen" : "lightgray" });
+
+  useEffect(() => {
+    document.body.style.cursor = hover ? "pointer" : "auto";
+  }, [hover]);
   // const [active, setActive] = useState(false);
   const ref = useWobble(0.5, "cos");
   useFrame(
@@ -20,20 +27,29 @@ export function Box(props) {
       (ref.current.rotation.x = ref.current.rotation.y = ref.current.rotation.z += 0.01)
   );
   return (
-    <mesh
+    <a.mesh
       ref={ref}
       {...props}
       // scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
       // onClick={(e) => setActive(!active)}
-      onPointerOver={() => setHover(true)}
-      onPointerOut={() => setHover(false)}
+      // onPointerOver={(event) => setHover(true)}
+      // onPointerOut={(event) => setHover(false)}
+      onPointerOver={(e) => {
+        e.stopPropagation();
+        setHover(true);
+      }}
+      onPointerOut={(e) => {
+        e.stopPropagation();
+        setHover(false);
+      }}
     >
       <boxBufferGeometry attach="geometry" /*args={[1, 1, 1]} */ />
-      <meshStandardMaterial
+      <a.meshStandardMaterial
         attach="material"
-        color={hovered ? "lightgreen" : "lightgray"}
+        // color={hovered ? "lightgreen" : "lightgray"}
+        color={hovered.color}
       />
-    </mesh>
+    </a.mesh>
   );
 }
 
@@ -196,7 +212,8 @@ export function Categories({ time = 5500 }) {
         style={{ width: 300 }}
         onClick={() => set((index + 1) % 2)}
       >
-        <div
+        {/* changed div to span */}
+        <span
           ref={ref}
           className="progress"
           style={{

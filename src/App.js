@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useEffect, useRef } from "react";
 import { Canvas, useThree } from "react-three-fiber";
-import { HTML, Loader } from "drei";
+import { Html, Loader } from "drei";
 import { Block } from "./blocks";
 import { Shapes, Categories, Box } from "./Home";
 import state from "./store";
@@ -9,7 +9,7 @@ import "./App.css";
 function HtmlContent({ className, style, children, portal }) {
   const { size } = useThree();
   return (
-    <HTML
+    <Html
       portal={portal}
       style={{
         position: "absolute",
@@ -22,7 +22,7 @@ function HtmlContent({ className, style, children, portal }) {
       <div className={className} style={style}>
         {children}
       </div>
-    </HTML>
+    </Html>
   );
 }
 
@@ -41,7 +41,7 @@ function App() {
         onCreated={({ gl, events }) => {
           gl.setClearColor("white");
           gl.toneMappingExposure = 2.5;
-          gl.toneMappingWhitePoint = 1;
+          // gl.toneMappingWhitePoint = 1;
           // Export canvas events, we will put them onto the scroll area
           setEvents(events);
         }}
@@ -74,23 +74,23 @@ function App() {
 
           <Block factor={1.5} offset={1}>
             <Box />
-            <HTML center portal={domContent}>
+            <Html center portal={domContent}>
               <h2>District Build NYC</h2>
-            </HTML>
+            </Html>
           </Block>
 
           <Block factor={1.5} offset={2}>
             <Box />
-            <HTML center portal={domContent}>
+            <Html center portal={domContent}>
               <h2>Churn</h2>
-            </HTML>
+            </Html>
           </Block>
 
           <Block factor={-2} offset={4}>
             <Box scale={[2, 2, 2]} />
-            <HTML center portal={domContent}>
+            <Html center portal={domContent}>
               <h2>Aeropress Dice</h2>
-            </HTML>
+            </Html>
           </Block>
         </Suspense>
       </Canvas>
