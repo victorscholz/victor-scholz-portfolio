@@ -35,11 +35,11 @@ export function Box(props) {
       // onPointerOver={(event) => setHover(true)}
       // onPointerOut={(event) => setHover(false)}
       onPointerOver={(e) => {
-        e.stopPropagation();
+        // e.stopPropagation();
         setHover(true);
       }}
       onPointerOut={(e) => {
-        e.stopPropagation();
+        // e.stopPropagation();
         setHover(false);
       }}
     >
