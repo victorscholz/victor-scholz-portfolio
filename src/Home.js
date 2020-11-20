@@ -13,7 +13,7 @@ function useWobble(factor = 1, fn = "sin", cb) {
 
 export function Box(props) {
   const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
   const ref = useWobble(0.5, "cos");
   useFrame(
     () =>
@@ -23,12 +23,12 @@ export function Box(props) {
     <mesh
       ref={ref}
       {...props}
-      scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
-      onClick={(e) => setActive(!active)}
-      onPointerOver={(e) => setHover(true)}
-      onPointerOut={(e) => setHover(false)}
+      // scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
+      // onClick={(e) => setActive(!active)}
+      onPointerOver={() => setHover(true)}
+      onPointerOut={() => setHover(false)}
     >
-      <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
+      <boxBufferGeometry attach="geometry" /*args={[1, 1, 1]} */ />
       <meshStandardMaterial
         attach="material"
         color={hovered ? "lightgreen" : "lightgray"}

@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { Suspense, useState, useEffect, useRef } from "react";
 import { Canvas, useThree } from "react-three-fiber";
-import { HTML } from "drei";
+import { HTML, Loader } from "drei";
 import { Block } from "./blocks";
 import { Shapes, Categories, Box } from "./Home";
 import state from "./store";
@@ -46,52 +46,55 @@ function App() {
           setEvents(events);
         }}
       >
-        <Block factor={1.5} offset={0}>
-          <Shapes />
-          <HtmlContent portal={domContent}>
-            <div className="menu left" style={{ top: "2.55rem" }}>
-              <h2 style={{ fontSize: "2em", top: "4rem" }}>Victor Scholz</h2>
-            </div>
-            <div className="menu right">
-              {/* Add hyperlink onClick for each of these */}
-              <span>LinkedIn</span>
-              <span>Github</span>
-              <span>Medium</span>
-            </div>
-            <div className="jumbo">
-              <h1>
-                Full
-                <br />
-                Stack
-                <br />
-                Developer
-              </h1>
-              <Categories />
-            </div>
-          </HtmlContent>
-        </Block>
+        <Suspense fallback={null}>
+          <Block factor={1.5} offset={0}>
+            <Shapes />
+            <HtmlContent portal={domContent}>
+              <div className="menu left" style={{ top: "2.55rem" }}>
+                <h2 style={{ fontSize: "2em", top: "4rem" }}>Victor Scholz</h2>
+              </div>
+              <div className="menu right">
+                {/* Add hyperlink onClick for each of these */}
+                <span>LinkedIn</span>
+                <span>Github</span>
+                <span>Medium</span>
+              </div>
+              <div className="jumbo">
+                <h1>
+                  Full
+                  <br />
+                  Stack
+                  <br />
+                  Developer
+                </h1>
+                <Categories />
+              </div>
+            </HtmlContent>
+          </Block>
 
-        <Block factor={1.5} offset={1}>
-          <Box />
-          <HTML center portal={domContent}>
-            <h2>District Build NYC</h2>
-          </HTML>
-        </Block>
+          <Block factor={1.5} offset={1}>
+            <Box />
+            <HTML center portal={domContent}>
+              <h2>District Build NYC</h2>
+            </HTML>
+          </Block>
 
-        <Block factor={1.5} offset={2}>
-          <Box />
-          <HTML center portal={domContent}>
-            <h2>Churn</h2>
-          </HTML>
-        </Block>
+          <Block factor={1.5} offset={2}>
+            <Box />
+            <HTML center portal={domContent}>
+              <h2>Churn</h2>
+            </HTML>
+          </Block>
 
-        <Block factor={-2} offset={4}>
-          <Box scale={[2, 2, 2]} />
-          <HTML center portal={domContent}>
-            <h2>Aeropress Dice</h2>
-          </HTML>
-        </Block>
+          <Block factor={-2} offset={4}>
+            <Box scale={[2, 2, 2]} />
+            <HTML center portal={domContent}>
+              <h2>Aeropress Dice</h2>
+            </HTML>
+          </Block>
+        </Suspense>
       </Canvas>
+      <Loader />
 
       <div
         className="scrollArea"
