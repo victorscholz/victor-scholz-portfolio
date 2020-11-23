@@ -58,7 +58,7 @@ function App() {
                 <span>Resume</span>
                 {/* Add hyperlink onClick for each of these */}
                 <span>LinkedIn</span>
-                <span>Github</span>
+                <span href="https://github.com/victorscholz">Github</span>
                 <span>Medium</span>
               </div>
               <div className="jumbo">
