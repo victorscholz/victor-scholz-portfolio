@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useEffect, useRef } from "react";
 import { Canvas, useThree } from "react-three-fiber";
-import { Html, Loader } from "drei";
+import { HTML } from "drei";
 import { Block } from "./blocks";
 import { Shapes, Categories, Box } from "./Home";
 import state from "./store";
@@ -9,7 +9,7 @@ import "./App.css";
 function HtmlContent({ className, style, children, portal }) {
   const { size } = useThree();
   return (
-    <Html
+    <HTML
       portal={portal}
       style={{
         position: "absolute",
@@ -22,7 +22,7 @@ function HtmlContent({ className, style, children, portal }) {
       <div className={className} style={style}>
         {children}
       </div>
-    </Html>
+    </HTML>
   );
 }
 
@@ -76,27 +76,27 @@ function App() {
 
           <Block factor={1.5} offset={1}>
             <Box />
-            <Html center portal={domContent}>
+            <HTML center portal={domContent}>
               <h2>District Build NYC</h2>
-            </Html>
+            </HTML>
           </Block>
 
           <Block factor={1.5} offset={2}>
             <Box />
-            <Html center portal={domContent}>
+            <HTML center portal={domContent}>
               <h2>Churn</h2>
-            </Html>
+            </HTML>
           </Block>
 
           <Block factor={-2} offset={4}>
             <Box scale={[2, 2, 2]} />
-            <Html center portal={domContent}>
+            <HTML center portal={domContent}>
               <h2>Aeropress Dice</h2>
-            </Html>
+            </HTML>
           </Block>
         </Suspense>
       </Canvas>
-      <Loader />
+      {/* <Loader /> */}
 
       <div
         className="scrollArea"
