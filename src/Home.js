@@ -14,12 +14,12 @@ function useWobble(factor = 1, fn = "sin", cb) {
 }
 
 export function Box(props) {
-  const [hover, setHover] = useState(false);
-  const hovered = useSpring({ color: hover ? "lightgreen" : "lightgray" });
+  const [hovered, setHover] = useState(false);
+  // const hovered = useSpring({ color: hover ? "lightgreen" : "lightgray" });
 
   useEffect(() => {
-    document.body.style.cursor = hover ? "pointer" : "auto";
-  }, [hover]);
+    document.body.style.cursor = hovered ? "pointer" : "auto";
+  }, [hovered]);
   // const [active, setActive] = useState(false);
   const ref = useWobble(0.5, "cos");
   useFrame(
@@ -46,8 +46,8 @@ export function Box(props) {
       <boxBufferGeometry attach="geometry" /*args={[1, 1, 1]} */ />
       <a.meshStandardMaterial
         attach="material"
-        // color={hovered ? "lightgreen" : "lightgray"}
-        color={hovered.color}
+        color={hovered ? "lightgreen" : "lightgray"}
+        // color={hovered.color}
       />
     </a.mesh>
   );
