@@ -1,7 +1,7 @@
 import React, { useRef, useMemo, useEffect, useState } from "react";
 import { useFrame, useThree } from "react-three-fiber";
-import { useSpring } from "@react-spring/core";
-import { a } from "@react-spring/three";
+// import { useSpring } from "@react-spring/core";
+// import { a } from "@react-spring/three";
 
 function useWobble(factor = 1, fn = "sin", cb) {
   const ref = useRef();
@@ -27,7 +27,8 @@ export function Box(props) {
       (ref.current.rotation.x = ref.current.rotation.y = ref.current.rotation.z += 0.01)
   );
   return (
-    <a.mesh
+    // removed {a} from react spring
+    <mesh
       ref={ref}
       {...props}
       // scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
@@ -44,12 +45,12 @@ export function Box(props) {
       }}
     >
       <boxBufferGeometry attach="geometry" /*args={[1, 1, 1]} */ />
-      <a.meshStandardMaterial
+      <meshStandardMaterial
         attach="material"
         color={hovered ? "lightgreen" : "lightgray"}
         // color={hovered.color}
       />
-    </a.mesh>
+    </mesh>
   );
 }
 
