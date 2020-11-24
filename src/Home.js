@@ -235,7 +235,7 @@ export function Categories({ time = 5500 }) {
           </span>
         ))}
       </button>
-      is a,
+      is a
       <br />
       {cats.map(({ description }, i) => (
         <span
