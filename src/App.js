@@ -35,19 +35,31 @@ function App() {
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
   const handleClick = (e) => {
     e.preventDefault();
-    window.location.href = "https://www.linkedin.com/in/victor-scholz/";
+    window.open("https://www.linkedin.com/in/victor-scholz/");
   };
   const clickHandler = (e) => {
     e.preventDefault();
-    window.location.href = "https://github.com/victorscholz";
+    window.open("https://github.com/victorscholz");
   };
   const mediumClick = (e) => {
     e.preventDefault();
-    window.location.href = "https://medium.com/@victorscholz";
+    window.open("https://medium.com/@victorscholz");
   };
   const resumeClick = (e) => {
     e.preventDefault();
-    window.location.href = Pdf;
+    window.open(Pdf);
+  };
+  const districtBuild = (e) => {
+    e.preventDefault();
+    window.open("https://github.com/victorscholz/district-build-app-front-end");
+  };
+  const aeropressDice = (e) => {
+    e.preventDefault();
+    window.open("https://github.com/victorscholz/aeropress-dice-front-end");
+  };
+  const ccTracker = (e) => {
+    e.preventDefault();
+    window.open("https://github.com/kevkevxd/cc-tracker-client");
   };
   const [hovered, setHover] = useState(false);
   useEffect(() => {
@@ -138,21 +150,21 @@ function App() {
           <Block factor={1.5} offset={1}>
             <Box />
             <HTML center portal={domContent}>
-              <h2>District Build NYC</h2>
+              <h2 onClick={districtBuild}>District Build NYC</h2>
             </HTML>
           </Block>
 
           <Block factor={1.5} offset={2}>
             <Box />
             <HTML center portal={domContent}>
-              <h2>Churn</h2>
+              <h2 onClick={ccTracker}>Churn</h2>
             </HTML>
           </Block>
 
           <Block factor={-2} offset={4}>
             <Box scale={[2, 2, 2]} />
             <HTML center portal={domContent}>
-              <h2>Aeropress Dice</h2>
+              <h2 onClick={aeropressDice}>Aeropress Dice</h2>
             </HTML>
           </Block>
         </Suspense>
