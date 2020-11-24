@@ -150,21 +150,26 @@ function App() {
           <Block factor={1.5} offset={1}>
             <Box />
             <HTML center portal={domContent}>
-              <h2 onClick={districtBuild}>District Build NYC</h2>
+              <h2 className="cube" onClick={districtBuild}>
+                District Build NYC
+              </h2>
+              {/* <button className="cube" onClick={districtBuild}>
+                View on Github
+              </button> */}
             </HTML>
           </Block>
 
           <Block factor={1.5} offset={2}>
             <Box />
             <HTML center portal={domContent}>
-              <h2 onClick={ccTracker}>Churn</h2>
+              <h2 className="cube" onClick={ccTracker}>Churn</h2>
             </HTML>
           </Block>
 
           <Block factor={-2} offset={4}>
             <Box scale={[2, 2, 2]} />
             <HTML center portal={domContent}>
-              <h2 onClick={aeropressDice}>Aeropress Dice</h2>
+              <h2 className="cube" onClick={aeropressDice}>Aeropress Dice</h2>
             </HTML>
           </Block>
         </Suspense>
