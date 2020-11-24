@@ -231,11 +231,11 @@ p {
   text-align: left;
   vertical-align: bottom;
   top: 3px;
+  transition: background 0.5s ease-in-out;
 }
 
 .jumbo p > button:hover {
-  color: rgba(0, 0, 0, 0.5);
-  transition: all ease-in-out 0.5s;
+  background: #e2e2d6;
 }
 
 .jumbo button {

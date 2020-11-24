@@ -15,9 +15,9 @@ export function Box(props) {
   const [hovered, setHover] = useState(false);
   // const hovered = useSpring({ color: hover ? "lightgreen" : "lightgray" });
 
-  useEffect(() => {
-    document.body.style.cursor = hovered ? "pointer" : "auto";
-  }, [hovered]);
+  // useEffect(() => {
+  //   document.body.style.cursor = hovered ? "pointer" : "auto";
+  // }, [hovered]);
   // const [active, setActive] = useState(false);
   const ref = useWobble(0.5, "cos");
   useFrame(

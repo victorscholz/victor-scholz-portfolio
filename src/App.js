@@ -150,7 +150,16 @@ function App() {
           <Block factor={1.5} offset={1}>
             <Box />
             <HTML center portal={domContent}>
-              <h2 className="cube" onClick={districtBuild}>
+              <h2
+                className="cube"
+                onPointerOver={(e) => {
+                  setHover(true);
+                }}
+                onPointerOut={(e) => {
+                  setHover(false);
+                }}
+                onClick={districtBuild}
+              >
                 District Build NYC
               </h2>
               {/* <button className="cube" onClick={districtBuild}>
@@ -162,14 +171,36 @@ function App() {
           <Block factor={1.5} offset={2}>
             <Box />
             <HTML center portal={domContent}>
-              <h2 className="cube" onClick={ccTracker}>Churn</h2>
+              <h2
+                className="cube"
+                onPointerOver={(e) => {
+                  setHover(true);
+                }}
+                onPointerOut={(e) => {
+                  setHover(false);
+                }}
+                onClick={ccTracker}
+              >
+                Churn
+              </h2>
             </HTML>
           </Block>
 
           <Block factor={-2} offset={4}>
             <Box scale={[2, 2, 2]} />
             <HTML center portal={domContent}>
-              <h2 className="cube" onClick={aeropressDice}>Aeropress Dice</h2>
+              <h2
+                className="cube"
+                onPointerOver={(e) => {
+                  setHover(true);
+                }}
+                onPointerOut={(e) => {
+                  setHover(false);
+                }}
+                onClick={aeropressDice}
+              >
+                Aeropress Dice
+              </h2>
             </HTML>
           </Block>
         </Suspense>
