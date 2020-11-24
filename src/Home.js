@@ -1,7 +1,5 @@
 import React, { useRef, useMemo, useEffect, useState } from "react";
 import { useFrame, useThree } from "react-three-fiber";
-// import { useSpring } from "@react-spring/core";
-// import { a } from "@react-spring/three";
 
 function useWobble(factor = 1, fn = "sin", cb) {
   const ref = useRef();
@@ -208,8 +206,8 @@ export function Categories({ time = 5500 }) {
 
   return (
     <p style={{ height: 70 }}>
-      <a
-        href="https://github.com/victorscholz"
+      <button
+        // href="#"
         style={{ width: 300 }}
         onClick={() => set((index + 1) % 2)}
       >
@@ -236,7 +234,7 @@ export function Categories({ time = 5500 }) {
             {npm}
           </span>
         ))}
-      </a>
+      </button>
       is a,
       <br />
       {cats.map(({ description }, i) => (

@@ -3,6 +3,7 @@ import { Canvas, useThree } from "react-three-fiber";
 import { HTML } from "drei";
 import { Block } from "./blocks";
 import { Shapes, Categories, Box } from "./Home";
+import Pdf from "./Resume.pdf";
 import state from "./store";
 import "./App.css";
 
@@ -32,6 +33,26 @@ function App() {
   const scrollArea = useRef();
   const onScroll = (e) => (state.top.current = e.target.scrollTop);
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
+  const handleClick = (e) => {
+    e.preventDefault();
+    window.location.href = "https://www.linkedin.com/in/victor-scholz/";
+  };
+  const clickHandler = (e) => {
+    e.preventDefault();
+    window.location.href = "https://github.com/victorscholz";
+  };
+  const mediumClick = (e) => {
+    e.preventDefault();
+    window.location.href = "https://medium.com/@victorscholz";
+  };
+  const resumeClick = (e) => {
+    e.preventDefault();
+    window.location.href = Pdf;
+  };
+  const [hovered, setHover] = useState(false);
+  useEffect(() => {
+    document.body.style.cursor = hovered ? "pointer" : "auto";
+  }, [hovered]);
   return (
     <>
       <Canvas
@@ -41,7 +62,7 @@ function App() {
         onCreated={({ gl, events }) => {
           gl.setClearColor("white");
           gl.toneMappingExposure = 2.5;
-          // gl.toneMappingWhitePoint = 1;
+          gl.toneMappingWhitePoint = 1;
           // Export canvas events, we will put them onto the scroll area
           setEvents(events);
         }}
@@ -54,12 +75,52 @@ function App() {
                 <h2 style={{ fontSize: "2em", top: "4rem" }}>Victor Scholz</h2>
               </div>
               <div className="menu right">
-                {/* Add modal for pdf view of resume */}
-                <span>Resume</span>
-                {/* Add hyperlink onClick for each of these */}
-                <span>LinkedIn</span>
-                <span>Github</span>
-                <span>Medium</span>
+                <span
+                  // href={Pdf}
+                  target="_blank"
+                  onPointerOver={(e) => {
+                    setHover(true);
+                  }}
+                  onPointerOut={(e) => {
+                    setHover(false);
+                  }}
+                  onClick={resumeClick}
+                >
+                  Resume
+                </span>
+                <span
+                  onPointerOver={(e) => {
+                    setHover(true);
+                  }}
+                  onPointerOut={(e) => {
+                    setHover(false);
+                  }}
+                  onClick={handleClick}
+                >
+                  LinkedIn
+                </span>
+                <span
+                  onPointerOver={(e) => {
+                    setHover(true);
+                  }}
+                  onPointerOut={(e) => {
+                    setHover(false);
+                  }}
+                  onClick={clickHandler}
+                >
+                  Github
+                </span>
+                <span
+                  onPointerOver={(e) => {
+                    setHover(true);
+                  }}
+                  onPointerOut={(e) => {
+                    setHover(false);
+                  }}
+                  onClick={mediumClick}
+                >
+                  Medium
+                </span>
               </div>
               <div className="jumbo">
                 <h1>
@@ -96,7 +157,6 @@ function App() {
           </Block>
         </Suspense>
       </Canvas>
-      {/* <Loader /> */}
 
       <div
         className="scrollArea"
