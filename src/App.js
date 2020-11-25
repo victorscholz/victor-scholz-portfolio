@@ -51,7 +51,7 @@ function App() {
   };
   const districtBuild = (e) => {
     e.preventDefault();
-    window.open("https://github.com/victorscholz/district-build-app-front-end");
+    window.open("https://streamable.com/ivizzx");
   };
   const aeropressDice = (e) => {
     e.preventDefault();

@@ -175,7 +175,7 @@ p {
   text-decoration: none;
   /* border-bottom: 1px solid transparent;
   transition: all ease-in-out 0.5s; */
-  transition: color .5s;
+  transition: color .5s ease-in-out;
   padding-left: 1rem;
   padding-right: 1rem;
 }

@@ -208,7 +208,7 @@ export function Categories({ time = 5500 }) {
     <p style={{ height: 70 }}>
       <button
         // href="#"
-        style={{ width: 300 }}
+        style={{ width: 280 }}
         onClick={() => set((index + 1) % 2)}
       >
         {/* changed div to span */}
@@ -224,7 +224,7 @@ export function Categories({ time = 5500 }) {
             background: "#ffa5a5",
           }}
         />
-        @victorscholz/
+        victorscholz/
         {cats.map(({ npm }, i) => (
           <span
             key={i}
