@@ -55,7 +55,7 @@ function App() {
   };
   const aeropressDice = (e) => {
     e.preventDefault();
-    window.open("https://github.com/victorscholz/aeropress-dice-front-end");
+    window.open("https://streamable.com/8sg1on");
   };
   const ccTracker = (e) => {
     e.preventDefault();
