@@ -4,6 +4,7 @@ import { HTML } from "drei";
 import { Block } from "./blocks";
 import { Shapes, Categories, Box } from "./Home";
 import Pdf from "./Resume.pdf";
+import Logo from "./logo.png"
 import state from "./store";
 import "./App.css";
 
@@ -84,6 +85,7 @@ function App() {
             <Shapes />
             <HtmlContent portal={domContent}>
               <div className="menu left" style={{ top: "2.55rem" }}>
+                <img src={Logo} alt="Portfolio Logo" width="80" height="80"></img>
                 <h2 style={{ fontSize: "2em", top: "4rem" }}>Victor Scholz</h2>
               </div>
               <div className="menu right">
