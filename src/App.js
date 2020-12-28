@@ -44,7 +44,7 @@ function App() {
   };
   const mediumClick = (e) => {
     e.preventDefault();
-    window.open("https://medium.com/@victorscholz");
+    window.open("https://victorscholz.medium.com/");
   };
   const resumeClick = (e) => {
     e.preventDefault();
