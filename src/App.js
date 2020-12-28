@@ -36,7 +36,7 @@ function App() {
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
   const handleClick = (e) => {
     e.preventDefault();
-    window.open("https://www.linkedin.com/in/victor-scholz/");
+    window.open("https://www.linkedin.com/in/victorscholz/");
   };
   const clickHandler = (e) => {
     e.preventDefault();
