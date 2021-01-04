@@ -87,17 +87,20 @@ export function Shapes() {
 }
 
 function Ring(props) {
+  const ref = useWobble(0.1, "sin");
   return (
-    <mesh {...props}>
-      <ringBufferGeometry attach="geometry" args={[1, 1.4, 64]} />
-      <meshBasicMaterial
-        attach="material"
-        color="#FFF9BE"
-        transparent
-        opacity={1}
-        toneMapped={false}
-      />
-    </mesh>
+    <group ref={ref}>
+      <mesh {...props}>
+        <ringBufferGeometry attach="geometry" args={[1, 1.4, 64]} />
+        <meshBasicMaterial
+          attach="material"
+          color="#FFF9BE"
+          transparent
+          opacity={1}
+          toneMapped={false}
+        />
+      </mesh>
+    </group>
   );
 }
 
