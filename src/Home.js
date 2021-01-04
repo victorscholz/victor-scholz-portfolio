@@ -185,17 +185,17 @@ export function Categories({ time = 5500 }) {
       {
         npm: "aeropress-dice",
         description:
-          "3D dice rolling game to generate random Aeropress recipes.",
+          "3D dice rolling game that generates random Aeropress recipes. Utilizes the react-three-fiber and use-cannon libraries.",
       },
       {
         npm: "district-build-nyc",
         description:
-          "map of NYC that allows a user to interact with it's historical buildings and landmarks.",
+          "map of NYC that allows a user to interact with it's historical buildings and landmarks via a clickable icon. Constructed with Mapbox GL.",
       },
-      {
-        npm: "churn",
-        description: "credit card and spending category application.",
-      },
+      // {
+      //   npm: "churn",
+      //   description: "credit card and spending category application.",
+      // },
     ],
     []
   );
