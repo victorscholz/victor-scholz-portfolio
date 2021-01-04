@@ -174,7 +174,7 @@ function Lights() {
   );
 }
 
-export function Categories({ time = 5500 }) {
+export function Categories({ time = 6500 }) {
   const [index, set] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => set((index + 1) % 2), time);
