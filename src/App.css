@@ -81,8 +81,8 @@ p {
   align-items: flex-end;
 }
 
-.page .block::before {
-}
+/* .page.block::before {
+} */
 
 .half {
   width: 450px;
@@ -259,20 +259,20 @@ p {
 }
 
 @media (max-width: 580px) {
-  .logo {
-    width: 70px;
-    height: 70px;
-    top: 1.5rem;
-    left: 2rem;
+  .menu.left {
+    /* width: 70px;
+    height: 70px; */
+    /* top: 1rem; */
+    left: 4rem;
   }
   .menu.right {
-    top: 2rem;
-    right: 2rem;
+    top: .5rem;
+    right: 1rem;
   }
   .jumbo h1 {
-    font-size: 46px;
+    font-size: 50px;
     line-height: 46px;
-    letter-spacing: 26px;
+    letter-spacing: 10px;
     margin-left: 26px;
   }
 }
