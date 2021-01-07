@@ -211,7 +211,7 @@ export function Categories({ time = 6500 }) {
     <p style={{ height: 70 }}>
       <button
         // href="#"
-        style={{ width: 280 }}
+        style={{ width: 280, left: 5 }}
         onClick={() => set((index + 1) % 2)}
       >
         {/* changed div to span */}
@@ -245,7 +245,7 @@ export function Categories({ time = 6500 }) {
           key={i}
           hidden={i !== index || undefined}
           className="transition horizontal"
-          style={{ width: "100%", left: 0 }}
+          style={{ width: "100%", left: 5 }}
         >
           {description}
         </span>
