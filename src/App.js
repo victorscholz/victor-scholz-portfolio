@@ -56,7 +56,7 @@ function App() {
   };
   const aeropressDice = (e) => {
     e.preventDefault();
-    window.open("https://streamable.com/8sg1on");
+    window.open("https://aeropress-dice.herokuapp.com/");
   };
   const ccTracker = (e) => {
     e.preventDefault();
