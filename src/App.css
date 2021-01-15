@@ -291,6 +291,7 @@ p {
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: all ease-in-out 0.5s;
+  margin-left: 0rem;
   /* transition: text-decoration 1s; */
 }
 
