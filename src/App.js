@@ -52,7 +52,7 @@ function App() {
   };
   const districtBuild = (e) => {
     e.preventDefault();
-    window.open("https://streamable.com/ivizzx");
+    window.open("https://districtbuildnyc.netlify.app/");
   };
   const aeropressDice = (e) => {
     e.preventDefault();
