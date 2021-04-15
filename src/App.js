@@ -89,7 +89,7 @@ function App() {
                 <h2 style={{ fontSize: "2em", top: "4rem" }}>Victor Scholz</h2>
               </div>
               <div className="menu right">
-                <span
+                {/* <span
                   // href={Pdf}
                   target="_blank"
                   onPointerOver={(e) => {
@@ -101,7 +101,7 @@ function App() {
                   onClick={resumeClick}
                 >
                   Resume
-                </span>
+                </span> */}
                 <span
                   onPointerOver={(e) => {
                     setHover(true);
