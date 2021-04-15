@@ -3,7 +3,7 @@ import { Canvas, useThree } from "react-three-fiber";
 import { HTML } from "drei";
 import { Block } from "./blocks";
 import { Shapes, Categories, Box } from "./Home";
-import Pdf from "./Resume.pdf";
+// import Pdf from "./Resume.pdf";
 import Logo from "./logo.png"
 import state from "./store";
 import "./App.css";
