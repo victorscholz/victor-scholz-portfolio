@@ -46,10 +46,10 @@ function App() {
     e.preventDefault();
     window.open("https://victorscholz.medium.com/");
   };
-  const resumeClick = (e) => {
-    e.preventDefault();
-    window.open(Pdf);
-  };
+  // const resumeClick = (e) => {
+  //   e.preventDefault();
+  //   window.open(Pdf);
+  // };
   const districtBuild = (e) => {
     e.preventDefault();
     window.open("https://districtbuild.nyc/");
